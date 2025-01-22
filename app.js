@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var favicon = require('serve-favicon');
 var path = require('path');
+var bicicletasAPIRouter = require('./routes/api/bicicletas');
 var app = express();
 
 // 2. Configuraciones
@@ -25,6 +26,8 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // 4. Rutas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/bicicletas', bicicletasAPIRouter); //If there are several versions of the API, /api/v1/bicicletas is usually used
+
 
 // 5. Manejadores de errores
 app.use(function (req, res, next) {
