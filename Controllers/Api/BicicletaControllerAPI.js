@@ -22,3 +22,10 @@ exports.bicicleta_delete = function (req, res) {
     Bicicleta.removeById(req.body.id);
     res.status(204).send();
 };
+
+exports.bicicleta_update = function (req, res) {
+    Bicicleta.updateById(req.body.id, req.body.color, req.body.modelo, [req.body.latitud, req.body.longitud]);
+    res.status(200).json({
+        bicicletas: Bicicleta.allBicis
+    });
+};
