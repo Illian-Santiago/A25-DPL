@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var favicon = require('serve-favicon');
 var path = require('path');
-var bicicletasAPIRouter = require('./routes/api/bicicletas');
+var bicicletasAPIRouter = require('./routes/Api/bicicletas');
 var app = express();
 
 // 2. Configuraciones
